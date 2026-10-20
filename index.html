@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FJ Space Neon Love Animation</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- কন্ট্রোল প্যানেল (রেকর্ডিংয়ের সময় হাইড করার ব্যবস্থা সহ) -->
+  <div class="recorder-controls" id="controlsPanel">
+    <div class="input-group">
+      <label>লাভের ভেতরের নাম:</label>
+      <input type="text" id="nameInput" value="FJ">
+    </div>
+    <div class="input-group">
+      <label>নিচের ক্যাপশন:</label>
+      <input type="text" id="taglineInput" value="I LOVE YOU ❤️">
+    </div>
+    <div class="btn-box">
+      <button id="updateBtn">▶ Play & Reset</button>
+      <button id="hideBtn">👁️ Hide Box</button>
+    </div>
+  </div>
+
+  <!-- আবার কন্ট্রোল বক্স ফিরিয়ে আনার ছোট বাটন -->
+  <button id="showBtn" style="display:none;">⚙️ Controls</button>
+
+  <!-- Dynamic Cosmic Background -->
+  <div class="space-bg"></div>
+
+  <!-- Main Animation Canvas -->
+  <div class="canvas-container">
+    <canvas id="animationCanvas"></canvas>
+    
+    <!-- Golden Sub-caption -->
+    <div class="tagline" id="tagline">I LOVE YOU ❤️</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

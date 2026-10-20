@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@800&family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #020008;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* রেকর্ডিং উপযোগী কন্ট্রোল প্যানেল */
+.recorder-controls {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(15, 10, 30, 0.9);
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  transition: 0.3s ease;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-group label {
+  color: #00f0ff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.recorder-controls input {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid #00f0ff;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.recorder-controls button {
+  background: linear-gradient(135deg, #ff0055, #00f0ff);
+  border: none;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.recorder-controls button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00f0ff;
+}
+
+/* কন্ট্রোল বক্স হাইড করার পর ছোট শো বাটন */
+#showBtn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 101;
+  background: rgba(0, 240, 255, 0.2);
+  border: 1px solid #00f0ff;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+}
+
+/* Cosmic Space Background */
+.space-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 0, 150, 0.35) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0, 200, 255, 0.3) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(120, 0, 255, 0.25) 0%, rgba(2, 0, 10, 0.95) 80%);
+  filter: blur(30px);
+  z-index: 1;
+  animation: cosmicPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicPulse {
+  0% { transform: scale(1); opacity: 0.85; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+.canvas-container {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Glowing Tagline (ফাস্ট অ্যানিমেশনের জন্য transition কমানো হয়েছে) */
+.tagline {
+  position: absolute;
+  bottom: 80px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffeb3b;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px #ffeb3b, 0 0 30px #ff9800;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* স্লো থেকে ফাস্ট পপ-আপ ইফেক্ট */
+}
+
+.tagline.show {
+  opacity: 1;
+  transform: translateY(0);
+}
